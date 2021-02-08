@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.administratorMapper" >
+    <resultMap id="BaseResultMap" type="com.example.demo.pojo.administratorDao" >
+        <id column="administrator_no" property="administratorNo" jdbcType="VARCHAR" />
+        <result column="administrator_name" property="administratorName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="level" property="level" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select *
+        from administrator
+        where administrator_no = #{administratorNo}
+    </select>
+
+</mapper>
